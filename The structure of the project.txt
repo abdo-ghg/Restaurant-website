@@ -1,0 +1,19 @@
+restaurant-website/
+│
+├── index.html              ← الصفحة الرئيسية
+├── menu.html               ← صفحة قائمة الطعام
+├── about.html              ← صفحة "من نحن" + الفروع
+├── contact.html            ← صفحة التواصل
+├── reviews.html            ← صفحة آراء العملاء
+│
+├── css/
+│   └── style.css           ← التنسيقات العامة للموقع
+│
+├── js/
+│   └── script.js           ← أكواد JavaScript المشتركة
+│
+└── images/
+    ├── logo.png
+    ├── dish1.jpg
+    ├── banner.jpg
+    └── ... باقي الصور

@@ -1,0 +1,82 @@
+
+-----> Requirements
+- Home shall contain design of the restaurants and a Navigation bar
+which for example contain (Home, Menu, about us, and review)
+• User shall navigate between this pages.
+• Menu page shall contain list of categories (pizza, desert,
+drinks…etc)
+• User shall choose any category and a list of menu will appear
+containing (picture of item, description and price)
+• Click on a travel option or package to view more details and pricing
+information.
+• About us page shall contains info about the restaurant such as
+branches or numbers
+• Contact the Restaurant customer service through the website's
+contact page or customer service line for any questions or
+concerns.
+• Leave a review or testimonial about their Restaurant service and
+food.
+
+
+👥 Team Member Tasks:
+
+🧠 Member 1: Project Coordinator & Layout Manager
+- Set up the full project structure (folders and files)
+- Create a fixed header and footer for all pages
+- Link all pages through the navigation bar
+- Prepare style.css and script.js as base files
+- Ensure consistent layout and design across all pages
+
+✅ Files:
+- index.html (for header & footer)
+- menu.html, about.html, contact.html, reviews.html (add header & footer only)
+- css/style.css
+- js/script.js
+
+
+🏠 Member 2: Home Page Specialist
+- Design index.html (Home Page):
+  - Hero banner or slider
+  - Featured dishes section
+  - Short introduction about the restaurant
+- Make sure it is fully responsive
+
+✅ Files:
+- index.html (content only, excluding header & footer)
+
+
+🍕 Member 3: Menu Page Developer
+- Design menu.html:
+  - Display food items using attractive cards
+  - Divide menu into categories (Pizza - Desserts - Drinks...)
+  - Add filter or tab system for categories
+  - Add images, prices, and descriptions
+
+✅ Files:
+- menu.html
+- Use images from images/ folder
+
+
+🏢 Member 4: About Us + Branches
+- Design about.html:
+  - Write the restaurant story or mission
+  - Add a section for branch addresses
+  - Optionally add a map using Google Maps Embed
+
+✅ Files:
+- about.html
+
+
+🗨️ Member 5: Contact Page + Reviews Page
+- Design contact.html:
+  - Contact form (name, email, message)
+  - Restaurant contact info (address, phone, email)
+
+- Design reviews.html:
+  - Display customer reviews/comments
+  - Add form for submitting a new review (name, comment, rating)
+
+✅ Files:
+- contact.html
+- reviews.html
+- Use js/script.js for form validation or interactions
