@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Review مطعم غازي و شركائ </title>
+  <link rel="stylesheet" href="/css/styles1.css">
+    <link rel="stylesheet" href="css/navheaderfooterstyle.css" />
+</head>
+
+<body>
+    <!--Header-->
+    <header class="header">
+      <nav class="navbar">
+        <ul>
+          <li><a href="home_page.html" > HOME </a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="reviews.html"class="active">Review</a></li>
+        </ul>
+      </nav>
+      <img class ="logo" src="images/logo.jpg" width="200" />
+    </header>
+
+  <h1>رأيكوا يبشاوات</h1>
+
+  <div id="reviewsContainer">
+    <!-- Reviews appear here -->
+  </div>
+
+  <section>
+    <h2>سيب كلمة</h2>
+    <form id="reviewForm">
+      <input type="text" id="reviewerName" placeholder="Your Name" required>
+      <textarea id="reviewComment" placeholder="Your Comment" required></textarea>
+      <label for="rating">Rating:</label>
+      <select id="rating" required>
+        <option value="">--اختار يا حبيبى اختار--</option>
+        <option value="5">5 - طرش الطرش</option>
+        <option value="4">4 -جامد</option>
+        <option value="3">3 - مش بطال</option>
+        <option value="2">2 - يتاكل</option>
+        <option value="1">1 - مينفعش كدا</option>
+      </select>
+      <button type="submit">Submit Review</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+      <div class="footer-content">
+          <div class="footer-main">
+              <div class="footer-section">
+                  <h3>Quick Links</h3>
+                  <ul>
+                      <li><a href="/home_page.html">Home</a></li>
+                      <li><a href="/menu.html">Menu</a></li>
+                      <li><a href="/home_page.html">About Us</a></li>
+                      <li><a href="/contact.html">Contact Us</a></li>
+                      <li><a href="/reviews.html">Reviews</a></li>
+                  </ul>
+              </div>
+
+              <div class="footer-section">
+                <h3>Our Branches</h3>
+                <ul>
+                  <li><a href="#korba">Korba Square</a></li>
+                  <li><a href="#cairo">New Cairo</a></li>
+                  <li><a href="#zamalek">Zamalek</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                  <div class="contact-item">
+                    <span class="contact-icon">✉</span>
+                    <span class="contact-label">Email:</span>
+                    <span class="contact-value">info@ghazi-restaurant.com</span>
+                  </div>
+                  <div class="contact-item">
+                    <span class="contact-icon">☎</span>
+                    <span class="contact-label">Hotline:</span>
+                    <span class="contact-value">1551</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 مطعم غازي و شركائه | All Rights Reserved</p>
+            </div>
+      </div>
+  </footer>
+  <script src="js/scriptR.js"></script>
+</body>
+</html>

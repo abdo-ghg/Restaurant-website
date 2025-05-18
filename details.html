@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Item Details</title>
+  <link rel="stylesheet" href="Manustyle.css">
+</head>
+<body>
+  <div class="details-container" id="details"></div>
+
+  <script>
+    const item = JSON.parse(localStorage.getItem("selectedItem"));
+    if (item) {
+      document.getElementById("details").innerHTML = `
+        <img src="${item.image}" alt="${item.name}" class="details-img">
+        <h2>${item.name}</h2>
+        <p><strong>Price:</strong> ${item.price}</p>
+        <p>${item.fullDescription}</p>
+        <button onclick="addToCart()">Add to Cart</button>
+      `;
+    } else {
+      document.getElementById("details").textContent = "No item selected.";
+    }
+
+    function addToCart() {
+      alert(`${item.name} added to cart!`);
+    }
+  </script>
+</body>
+</html>

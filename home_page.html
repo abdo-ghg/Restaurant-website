@@ -1,32 +1,199 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مطعم غازي وأصدقائه يرحب بكم</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title> مطعم غازي و شركائه </title>
+    <link rel="stylesheet" href="css/mainhomestyle.css" />
+    <link rel="stylesheet" href="css/navheaderfooterstyle.css" />
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>مطعم غازي وأصدقائه</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">الرئيسية</a></li>
-                    <li><a href="menu.html">قائمة الطعام</a></li>
-                    <li><a href="about.html">من نحن</a></li>
-                    <li><a href="contact.html">تواصل معنا</a></li>
-                    <li><a href="reviews.html">آراء العملاء</a></li>
-                </ul>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
+    <!--Header-->
+    <header class="header">
+        <nav class="navbar" width="100%">
+            <ul>
+                <li><a href="home_page.html" class="active"> HOME </a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">Contact Us</a></li>
+                <li><a href="reviews.html">Review</a></li>
+            </ul>
+        </nav>
+        <img class ="logo" src="images/logo.jpg" width="200" />
     </header>
-    
-    <script src="js/script.js"></script>
+
+    <!--Landing page -->
+    <div class="landingP">
+        <div class="landingP-left-sec">
+            <span> Welcome to مطعم غازي و شركائه </span>
+            <h1> Best Local restaurant you will visit in Korba Square !</h1>
+            <p>
+                We are bunch of CS students decided to open this restaurant because "المجال مش جايب همه". JK, only to be
+                an additional source of income beside our 150k salary/year. Hope you Ejoy it. Please If you have any
+                complains keep it for yourself :D
+            </p>
+            <div class="landingpsearch">
+                <input placeholder="Search any food " />
+                <button class="btn"> SEARCH </button>
+            </div>
+
+
+        </div>
+        <div class="imglandingp">
+            <img src="images/lounge.jpg" />
+        </div>
+
+
+    </div>
+    <!--Best sellers-->
+    <div class="BS-container">
+        <span> Best Sellers</span>
+        <div class="BsHeader">
+            <h1> Trending dishes</h1>
+            <button class="btn"> View All</button>
+        </div>
+        <div class="dishes-cards">
+            <div class="card">
+                <img class= "pizza" src="images/pizza-C1.jpeg" width="250" />
+                <div class="card-info">
+                    <div class="card-name">
+                    <p>Italian</p>
+                    <h3>Pepperoni pizza</h3>
+                    </div>
+                </div>
+            </div>
+            <!--card2-->
+            <div class="card">
+                <img class= "pizza" src="images/avocado-salad.jpg" width="250" />
+                <div class="card-info">
+                    <div class="card-name">
+                    <p>Greens</p>
+                    <h3>Caeser Salad</h3>
+                    </div>
+                </div>
+            </div>
+            <!--card3-->
+            <div class="card">
+                <img class= "pizza" src="images/pasta.jpeg" width="250" />
+                <div class="card-info">
+                    <div class="card-name">
+                    <p>American</p>
+                    <h3>Shrimp Pasta</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img class= "pizza" src="images/cinnamonrolls.jpg" width="250" />
+                <div class="card-info">
+                    <div class="card-name">
+                    <p>Sweets</p>
+                    <h3>Cinnamon Rolls</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+ <!-- Categories -->
+</div>
+<div class="BS-container">
+    <span> Discover our menu</span>
+    <div class="BsHeader">
+        <h1> Categories </h1>
+        <button class="btn"> View All</button>
+    </div>
+    <div class="dishes-cards">
+        <div class="card">
+            <img class= "pizza" src="images/Italy-cuisine-map.jpg" width="250" height="300"/>
+            <div class="card-info">
+                <div class="card-name">
+                <p>Italian cuisine</p>
+                <h3>Pizzas, salads, and more</h3>
+                </div>
+            </div>
+        </div>
+        <!--card2-->
+        <div class="card">
+            <img class= "pizza" src="images/drinksss.jpeg" width="250" height="300"/>
+            <div class="card-info">
+                <div class="card-name">
+                <p> Beverages </p>
+                <h3> Hot and cold drinks </h3>
+                </div>
+            </div>
+        </div>
+        <!--card3-->
+        <div class="card">
+            <img class= "pizza" src="images/appitizers.jpeg" width="250" height="300"/>
+            <div class="card-info">
+                <div class="card-name">
+                <p>Appetizers</p>
+                <h3>Mozzarella Sticks, Cheesy Shell Taco Bites, and more</h3>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class= "pizza" src="images/kids menu.jpeg" width="250" height="300" />
+            <div class="card-info">
+                <div class="card-name">
+                <p>Kids</p>
+                <h3>Happy meals</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>\
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-main">
+            <!-- Quick Links Section -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/home_page.html">Home</a></li>
+                    <li><a href="/menu.html">Menu</a></li>
+                    <li><a href="/home_page.html">About Us</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="/reviews.html">Reviews</a></li>
+                </ul>
+            </div>
+
+            <!-- Our Branches Section -->
+            <div class="footer-section">
+                <h3>Our Branches</h3>
+                <ul>
+                    <li><a href="#korba">Korba Square</a></li>
+                    <li><a href="#cairo">New Cairo</a></li>
+                    <li><a href="#zamalek">Zamalek</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Us Section -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">✉</span>
+                        <span class="contact-label">Email:</span>
+                        <span class="contact-value">info@ghazi-restaurant.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">☎</span>
+                        <span class="contact-label">Hotline:</span>
+                        <span class="contact-value">1551</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>© 2025 مطعم غازي و شركائه | All Rights Reserved</p>
+        </div>
+    </div>
+</footer>
+<!-- ------------------------------------------>
 </body>
 </html>
