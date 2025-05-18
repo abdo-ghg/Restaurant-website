@@ -4,6 +4,33 @@
   margin: 0;
   padding: 0;
 }
+.landingpsearch {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.landingpsearch input {
+  width: 60%;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 0.5rem;
+}
+
+.landingpsearch .btn {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--maroon);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.landingpsearch .btn:hover {
+  background-color: var(--accent);
+}
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -57,6 +84,7 @@ h1 {
 
 .items {
   display: grid;
+  overflow: visible;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 25px;
   padding: 20px;

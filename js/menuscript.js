@@ -5,7 +5,7 @@ const menuData = {
       price: "$5.99",
       description: "Rich chocolate layered cake",
       fullDescription: "A decadent chocolate cake with three layers of moist chocolate sponge, filled with chocolate ganache and covered in dark chocolate shavings.",
-      image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=1080&q=80"
+      image: "images/chocolate-cake.jpg"
     },
     {
       name: "New York Cheesecake",
@@ -19,7 +19,7 @@ const menuData = {
       price: "$5.25",
       description: "Italian coffee-flavored dessert",
       fullDescription: "Layers of coffee-soaked ladyfingers and mascarpone cream, dusted with cocoa powder.",
-      image: "https://images.unsplash.com/photo-1566401200904-9a340a7db470?ixlib=rb-1.2.1&auto=format&fit=crop&w=1080&q=80"
+      image:"images/tiramisu.jpg"
     }
   ],
   drinks: [
@@ -115,10 +115,29 @@ const menuData = {
     }
   ]
 };
+
 function getAllItems() {
   return Object.entries(menuData).flatMap(([category, items]) =>
-    items.map(item => ({ ...item, category }))
+      items.map(item => ({ ...item, category }))
   );
+}
+
+// Update the active button when a category is clicked
+function updateActiveButton(category) {
+  // Remove active class from all buttons
+  document.querySelectorAll('.categories button').forEach(button => {
+    button.classList.remove('active');
+  });
+
+  // Add active class to the clicked button
+  const buttons = document.querySelectorAll('.categories button');
+  for (let button of buttons) {
+    if (button.textContent.toLowerCase().includes(category.toLowerCase()) ||
+        (category === 'all' && button.textContent.includes('All'))) {
+      button.classList.add('active');
+      break;
+    }
+  }
 }
 
 // Render menu items
@@ -126,24 +145,33 @@ function showCategory(category) {
   const container = document.getElementById("items");
   container.innerHTML = "";
 
-  const items = category === "all"
-    ? getAllItems()
-    : (menuData[category] || []).map(item => ({ ...item, category }));
+  updateActiveButton(category);
 
-  items.forEach((item, index) => {
+  const items = category === "all"
+      ? getAllItems()
+      : (menuData[category] || []).map(item => ({ ...item, category }));
+
+  if (items.length === 0) {
+    container.innerHTML = '<div class="no-items">No items found in this category.</div>';
+    return;
+  }
+
+  items.forEach((item) => {
     const card = document.createElement("div");
     card.className = "item";
     card.innerHTML = `
-      <img src="${item.image}" alt="${item.name}">
-      <h3>${item.name}</h3>
-      <p><strong>Price:</strong> ${item.price}</p>
-      <p>${item.description}</p>
-      <div class="qty">
-        <button onclick="changeQty(this, -1)">−</button>
-        <span>1</span>
-        <button onclick="changeQty(this, 1)">+</button>
+      <img src="${item.image}" alt="${item.name}" onerror="this.src='images/default-food.jpg'">
+      <div class="item-content">
+        <h3>${item.name}</h3>
+        <p><strong>Price:</strong> ${item.price}</p>
+        <p>${item.description}</p>
+        <div class="qty">
+          <button onclick="changeQty(this, -1)">−</button>
+          <span>1</span>
+          <button onclick="changeQty(this, 1)">+</button>
+        </div>
+        <button class="view-details-btn" onclick="viewDetails('${item.category}', '${item.name}')">View Details</button>
       </div>
-      <button onclick='viewDetails(${JSON.stringify(item)})'>View Details</button>
     `;
     container.appendChild(card);
   });
@@ -157,11 +185,74 @@ function changeQty(button, delta) {
   span.textContent = count;
 }
 
-// Save item to localStorage and navigate to details
-function viewDetails(item) {
-  localStorage.setItem("selectedItem", JSON.stringify(item));
-  window.location.href = "details.html";
+function searchFood() {
+  const keyword = document.getElementById("searchInput").value.toLowerCase();
+  if (!keyword.trim()) {
+    showCategory("all");
+    return;
+  }
+
+  const container = document.getElementById("items");
+  container.innerHTML = "";
+
+  const allItems = getAllItems();
+
+  const filteredItems = allItems.filter(item =>
+      item.name.toLowerCase().includes(keyword) ||
+      item.description.toLowerCase().includes(keyword) ||
+      item.fullDescription.toLowerCase().includes(keyword) ||
+      item.category.toLowerCase().includes(keyword)
+  );
+
+  if (filteredItems.length === 0) {
+    container.innerHTML = '<div class="no-items">No matching items found.</div>';
+    return;
+  }
+
+  filteredItems.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "item";
+    card.innerHTML = `
+      <img src="${item.image}" alt="${item.name}" onerror="this.src='images/default-food.jpg'">
+      <div class="item-content">
+        <h3>${item.name}</h3>
+        <p><strong>Price:</strong> ${item.price}</p>
+        <p>${item.description}</p>
+        <div class="qty">
+          <button onclick="changeQty(this, -1)">−</button>
+          <span>1</span>
+          <button onclick="changeQty(this, 1)">+</button>
+        </div>
+        <button class="view-details-btn" onclick="viewDetails('${item.category}', '${item.name}')">View Details</button>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+
+  // No need to update active button for search results
 }
 
-// On load, show all items
-document.addEventListener("DOMContentLoaded", () => showCategory("all"));
+// Save item to localStorage and navigate to details
+function viewDetails(category, name) {
+  const allItems = menuData[category] || [];
+  const item = allItems.find(i => i.name === name);
+
+  if (item) {
+    localStorage.setItem("selectedItem", JSON.stringify({...item, category}));
+    window.location.href = "details.html";
+  }
+}
+
+// Add event listener for the search input to trigger search on Enter key
+document.addEventListener('DOMContentLoaded', function() {
+  showCategory("all");
+
+  const searchInput = document.getElementById('searchInput');
+  if (searchInput) {
+    searchInput.addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+        searchFood();
+      }
+    });
+  }
+});

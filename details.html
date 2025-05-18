@@ -1,31 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Item Details</title>
-  <link rel="stylesheet" href="Manustyle.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="css/navheaderfooterstyle.css" />
+  <link rel="stylesheet" href="Menustyle.css" />
 </head>
+
 <body>
-  <div class="details-container" id="details"></div>
+<!--Header-->
+<header class="header">
+  <nav class="navbar">
+    <ul>
+      <li><a href="home_page.html">HOME</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="reviews.html">Review</a></li>
+    </ul>
+  </nav>
+  <img class="logo" src="images/logo.jpg" width="200" alt="Restaurant Logo" />
+</header>
 
-  <script>
-    const item = JSON.parse(localStorage.getItem("selectedItem"));
-    if (item) {
-      document.getElementById("details").innerHTML = `
-        <img src="${item.image}" alt="${item.name}" class="details-img">
-        <h2>${item.name}</h2>
-        <p><strong>Price:</strong> ${item.price}</p>
-        <p>${item.fullDescription}</p>
-        <button onclick="addToCart()">Add to Cart</button>
-      `;
-    } else {
-      document.getElementById("details").textContent = "No item selected.";
+<div class="container">
+  <div id="details-content" class="details-container">
+    <!-- Details will be loaded here by JavaScript -->
+  </div>
+  <button class="back-btn" onclick="window.location.href='menu.html'">Back to Menu</button>
+</div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-main">
+      <!-- Quick Links Section -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="home_page.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+        </ul>
+      </div>
+
+      <!-- Our Branches Section -->
+      <div class="footer-section">
+        <h3>Our Branches</h3>
+        <ul>
+          <li><a href="#korba">Korba Square</a></li>
+          <li><a href="#cairo">New Cairo</a></li>
+          <li><a href="#zamalek">Zamalek</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Us Section -->
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">✉</span>
+            <span class="contact-label">Email:</span>
+            <span class="contact-value">info@ghazi-restaurant.com</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">☎</span>
+            <span class="contact-label">Hotline:</span>
+            <span class="contact-value">1551</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>© 2025 مطعم غازي و شركائه | All Rights Reserved</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Get selected item from localStorage
+    const itemJSON = localStorage.getItem("selectedItem");
+    if (!itemJSON) {
+      window.location.href = "menu.html";
+      return;
     }
 
-    function addToCart() {
-      alert(`${item.name} added to cart!`);
-    }
-  </script>
+    const item = JSON.parse(itemJSON);
+    const container = document.getElementById("details-content");
+
+    container.innerHTML = `
+                <img class="details-img" src="${item.image}" alt="${item.name}" onerror="this.src='images/default-food.jpg'">
+                <div class="details-content">
+                    <h2>${item.name}</h2>
+                    <div class="details-price">${item.price}</div>
+                    <div class="details-description">${item.fullDescription || item.description}</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            `;
+  });
+</script>
 </body>
 </html>
