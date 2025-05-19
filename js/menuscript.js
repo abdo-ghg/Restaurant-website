@@ -55,7 +55,7 @@ const menuData = {
       price: "EGP 80 (Est.)",
       description: "Cold brew with milk",
       fullDescription: "Slow-steeped cold brew coffee served with vanilla syrup and your choice of milk.",
-      image: "https://s23209.pcdn.co/wp-content/uploads/2015/07/Perfect-Iced-CoffeeIMG_0074.jpg"
+      image: "images/iced-coffee.jpg"
     },
     {
       name: "Mango Smoothie",
@@ -92,7 +92,7 @@ const menuData = {
       price: "EGP 90 (Est.)",
       description: "Classic pepperoni",
       fullDescription: "Hand-tossed dough with tomato sauce, mozzarella, and extra pepperoni.",
-      image: "https://th.bing.com/th/id/OIP._Tuj6ElUF8jhhcSg41_V_QHaE8?cb=iwc2&rs=1&pid=ImgDetMain"
+      image: "images/pizza-C1.jpeg"
     },
     {
       name: "Margherita",
@@ -211,14 +211,11 @@ function getAllItems() {
   );
 }
 
-// Update the active button when a category is clicked
 function updateActiveButton(category) {
-  // Remove active class from all buttons
   document.querySelectorAll('.categories button').forEach(button => {
     button.classList.remove('active');
   });
 
-  // Add active class to the clicked button
   const buttons = document.querySelectorAll('.categories button');
   for (let button of buttons) {
     if (button.textContent.toLowerCase().includes(category.toLowerCase()) ||
@@ -229,7 +226,7 @@ function updateActiveButton(category) {
   }
 }
 
-// Render menu items
+
 function showCategory(category) {
   const container = document.getElementById("items");
   container.innerHTML = "";
@@ -266,7 +263,6 @@ function showCategory(category) {
   });
 }
 
-// Handle +/− buttons
 function changeQty(button, delta) {
   const span = button.parentElement.querySelector("span");
   let count = parseInt(span.textContent);
@@ -318,10 +314,8 @@ function searchFood() {
     container.appendChild(card);
   });
 
-  // No need to update active button for search results
 }
 
-// Save item to localStorage and navigate to details
 function viewDetails(category, name) {
   const allItems = menuData[category] || [];
   const item = allItems.find(i => i.name === name);
@@ -332,7 +326,6 @@ function viewDetails(category, name) {
   }
 }
 
-// Add event listener for the search input to trigger search on Enter key
 document.addEventListener('DOMContentLoaded', function() {
   showCategory("all");
 

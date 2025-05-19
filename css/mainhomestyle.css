@@ -123,10 +123,171 @@
     text-transform: uppercase;
     font-size: 14px;
 }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 60px;
+            color: #3a2723;
+            font-weight: bold;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .feature {
+            display: flex;
+            margin-bottom: 40px;
+        }
+
+        .feature-img {
+            width: 260px;
+            height: 260px;
+            overflow: hidden;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .feature-content {
+            padding: 20px 30px;
+            flex: 1;
+        }
+
+        .icon-container {
+            width: 70px;
+            height: 70px;
+            background-color: #e6b980;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .icon {
+            font-size: 28px;
+            color: #3a2723;
+        }
+
+        .feature-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #3a2723;
+        }
+
+        .feature-text {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .header {
+            text-align: center;
+        }
+        .menu-title {
+            color: #d4a055;
+            font-size: 36px;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+        .pricing-title {
+            font-size: 60px;
+            color: #2a2a2a;
+            margin-top: 0;
+            margin-bottom: 50px;
+        }
+        .menu-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        .column {
+            width: 48%;
+        }
+        .section-title {
+            margin-top: 10px;
+            margin-left: 5px;
+            font-size: 36px;
+            color: #2a2a2a;
+            margin-bottom: 30px;
+        }
+        .menu-item {
+            display: flex;
+            margin-bottom: 40px;
+        }
+        .image-container {
+            position: relative;
+            margin-right: 20px;
+        }
+        .menu-image {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .price-badge {
+            position: absolute;
+            top: 10px;
+            right: 0;
+            background-color: #d4a055;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .item-details {
+            flex: 1;
+        }
+        .item-name {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #2a2a2a;
+        }
+        .item-description {
+            color: #666;
+            line-height: 1.5;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #d4a055;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            border-radius: 5px;
+        }
 .card{
     width: 250px;
-    background-color:#EEEEEE ;
+    background-color:#EEEE ;
     align-items: center;
+    color:black;
     border-radius:20px;
 }
 .card-info{
@@ -242,4 +403,6 @@
 .social-icons a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
+
+
 
